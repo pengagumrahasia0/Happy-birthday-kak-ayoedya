@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Quicksand:wght@400;600&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    background: white;
+    overflow-x: hidden;
+}
+
+/* ================= BALON + TALI ================= */
+.balloon-wrap {
+    position: absolute;
+    bottom: -250px;
+    animation-name: floatRandom;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.balloon {
+    width: 85px;
+    height: 115px;
+    border-radius: 50% 50% 48% 48%;
+    overflow: hidden;
+    background-image: url('images/saerom1.png');
+    background-size: cover;
+    background-position: center 30%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.string {
+    width: 2px;
+    height: 75px;
+    background: rgba(90,90,90,0.8);
+    margin: 0 auto;
+}
+
+/* gerak acak natural */
+@keyframes floatRandom {
+    0%   { transform: translate(0, 0) rotate(0deg); }
+    25%  { transform: translate(-25px, -40vh) rotate(-2deg); }
+    50%  { transform: translate(20px, -80vh) rotate(2deg); }
+    75%  { transform: translate(-15px, -120vh) rotate(-1deg); }
+    100% { transform: translate(15px, -170vh) rotate(1deg); }
+}
+
+/* ================= COVER ================= */
+#cover {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+#cover img {
+    width: 240px;
+    margin-bottom: 20px;
+}
+
+#cover input {
+    padding: 12px;
+    width: 220px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+#cover button {
+    padding: 12px 32px;
+    border-radius: 25px;
+    border: none;
+    background: #f3a6b5;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* ================= LETTER ================= */
+#letter {
+    display: none;
+    padding: 40px 20px;
+    position: relative;
+    z-index: 5;
+}
+
+.paper {
+    max-width: 420px;
+    margin: auto;
+    background-image: url("images/crumpled-paper.png");
+    background-size: cover;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.paper p {
+    font-family: 'Playfair Display', serif;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.birthday-cute {
+    display: block;
+    width: 200px;
+    margin: 0 auto 20px;
+}
+
+/* ================= CONFETTI ================= */
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 3;
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="confetti"></canvas>
+
+<audio id="bgMusic" loop>
+    <source src="serta-mulia.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ================= BALON BANYAK ================= -->
+<!-- COPY-PASTE AMAN, SEMUA FOTO SAMA -->
+<div class="balloon-wrap" style="left:2%;  animation-duration:22s; animation-delay:0s;"><div class="balloon"></div><div class="string"></div></div>
+<div class="balloon-wrap" style="left:6%;  animation-duration:26s; animation-delay:2s;"><div class="balloon"></div><div class="string"></div></div>
+<div class="balloon-wrap" style="left:10%; animation-duration:24s; animation-delay:4s;"><div class="balloon"></div><div class="string"></div></div>
+<div class="balloon-wrap" style="left:14%; animation-duration:30s; animation-delay:1s;"><div class="balloon"></div><div class="string"></div></div>
+<div class="balloon-wrap" style="left:18%; animation-duration:28s; animation-delay:3s;"><div class="balloon"></div><div class="string"></div></div>
+<div class="balloon-wrap" style="left:22%; animation-duration:25s; animation-delay:5s;"><div class="balloon"></div><div class="string"></div></div>
+<div class="balloon-wrap" style="left:26%; animation-duration:31s; animation-delay:2s;"><div class="balloon"></div><div class="string"></div></div>
+<div class="balloon-wrap" style="left:30%; animation-duration:23s; animation-delay:4s;"><div class="balloon"></div><div class="string"></div></div>
+<div class="balloon-wrap" style="left:34%; animation-duration:29s; animation-delay:6s;"><div class="balloon"></div><div class="string"></div></div>
+<div class="balloon-wrap" style="left:38%; animation-duration:26s; animation-delay:1s;"><div class="balloon"></div><div class="string"></div></div>
+
+<div class="balloon-wrap" style="left:42%; animation-duration:24s; animation-delay:3s;"><div class="balloon"></div><div class="string"></div></div>
+<div class="balloon-wrap" style="left:46%; animation-duration:32s; animation-delay:5s;"><div class="balloon"></div><div class="string"></div></div>
+<div class="balloon-wrap" style="left:50%; animation-duration:27s; animation-delay:2s;"><div class="balloon"></div><div class="string"></div></div>
+<div class="balloon-wrap" style="left:54%; animation-duration:22s; animation-delay:4s;"><div class="balloon"></div><div class="string"></div></div>
+<div class="balloon-wrap" style="left:58%; animation-duration:30s; animation-delay:6s;"><div class="balloon"></div><div class="string"></div></div>
+<div class="balloon-wrap" style="left:62%; animation-duration:25s; animation-delay:1s;"><div class="balloon"></div><div class="string"></div></div>
+<div class="balloon-wrap" style="left:66%; animation-duration:28s; animation-delay:3s;"><div class="balloon"></div><div class="string"></div></div>
+<div class="balloon-wrap" style="left:70%; animation-duration:24s; animation-delay:5s;"><div class="balloon"></div><div class="string"></div></div>
+<div class="balloon-wrap" style="left:74%; animation-duration:31s; animation-delay:2s;"><div class="balloon"></div><div class="string"></div></div>
+<div class="balloon-wrap" style="left:78%; animation-duration:26s; animation-delay:4s;"><div class="balloon"></div><div class="string"></div></div>
+
+<div class="balloon-wrap" style="left:82%; animation-duration:23s; animation-delay:6s;"><div class="balloon"></div><div class="string"></div></div>
+<div class="balloon-wrap" style="left:86%; animation-duration:29s; animation-delay:1s;"><div class="balloon"></div><div class="string"></div></div>
+<div class="balloon-wrap" style="left:90%; animation-duration:27s; animation-delay:3s;"><div class="balloon"></div><div class="string"></div></div>
+<div class="balloon-wrap" style="left:94%; animation-duration:32s; animation-delay:5s;"><div class="balloon"></div><div class="string"></div></div>
+
+<!-- ================= COVER ================= -->
+<section id="cover">
+    <img src="images/happy-birthday-logo.png">
+    <input type="text" placeholder="Enter name">
+    <button onclick="openLetter()">Open Letter</button>
+</section>
+
+<!-- ================= LETTER ================= -->
+<section id="letter">
+    <img src="images/happy-birthday-cute.png" class="birthday-cute">
+    <div class="paper">
+        <p>
+            cie kakak makin tua aja hahaha, gimana perasaan kakak di hari ulang tahun kakak ini?
+            mungkin ada keluh kesahnya? tapi gapapa, bahagia yaa di ulang tahunmu.
+            sebelum itu ayo make a wish dulu… udah?
+            semoga wish kamu terkabul yaa dan menjadi diri yang lebih baik lagi.
+        </p>
+
+        <p>
+            semoga di umur yang baru ini kakak selalu dikelilingi hal baik,
+            langkahnya dipermudah, hatinya dikuatkan,
+            dan hal-hal yang belum sempat tercapai pelan-pelan menemukan jalannya sendiri.
+        </p>
+
+        <p>
+            terima kasih ya kak, sudah bertahan sejauh ini.
+            semoga hari ini bukan cuma sekadar bertambah usia,
+            tapi juga bertambah bahagia.
+        </p>
+    </div>
+</section>
+
+<script>
+function openLetter() {
+    document.getElementById("cover").style.display = "none";
+    document.getElementById("letter").style.display = "block";
+    document.getElementById("bgMusic").play();
+    startConfetti();
+}
+
+/* CONFETTI */
+const canvas = document.getElementById("confetti");
+const ctx = canvas.getContext("2d");
+canvas.width = innerWidth;
+canvas.height = innerHeight;
+
+let confetti = [];
+
+function startConfetti() {
+    for (let i = 0; i < 200; i++) {
+        confetti.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height - canvas.height,
+            r: Math.random() * 5 + 4,
+            c: `hsl(${Math.random()*360},80%,70%)`
+        });
+    }
+    animate();
+}
+
+function animate() {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    confetti.forEach(p => {
+        ctx.beginPath();
+        ctx.fillStyle = p.c;
+        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fill();
+        p.y += 2;
+        if (p.y > canvas.height) p.y = -10;
+    });
+    requestAnimationFrame(animate);
+}
+</script>
+
+</body>
+</html>
